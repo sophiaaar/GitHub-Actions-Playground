@@ -2,7 +2,7 @@ import subprocess
 
 print("testing scripting")
 
-git_branch = subprocess.check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip()
+git_branch = subprocess.check_output(['git', 'branch']).strip()
 print(git_branch)
 
 # data = '''{
