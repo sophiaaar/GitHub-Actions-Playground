@@ -1,6 +1,5 @@
 import subprocess
 import sys
-import argv
 
 print("testing scripting")
 
