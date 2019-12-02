@@ -9,4 +9,10 @@ jobs:
       with:
        python-version: '3.x' # Version range or exact version of a Python version to use, using semvers version range syntax.
        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
-    - run: python testscript.py
+    
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+      
+    - run: python testscript.py ${{ steps.extract_branch.outputs.branch }}
