@@ -1,6 +1,6 @@
 name: Greetings
 
-on: [pull_request]
+on: [pull_request, issues]
 
 jobs:
   greeting:
@@ -10,3 +10,7 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         pr-message: 'Welcome to the Unity SRP repo! \n Please make sure to fill out the PR template as best you can to give reviewers as much information as possible. \n If you have any questions (and you are a Unity Employee) go to #devs-renderpipe'
+        issue-message: |
+                'Welcome to the Unity SRP repo!'
+                'Please make sure to fill out the PR template as best you can to give reviewers as much information as possible.'
+                'If you have any questions (and you are a Unity Employee) go to #devs-renderpipe'
