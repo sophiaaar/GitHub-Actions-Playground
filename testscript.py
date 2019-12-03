@@ -1,6 +1,6 @@
 import subprocess
 import sys
 
-print("testing scripting")
-
+print("testing")
+print(sys.argv[1])
 print('git_branch:' + sys.argv[1])
