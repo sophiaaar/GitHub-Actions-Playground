@@ -6,8 +6,10 @@ jobs:
     steps:
     - uses: actions/checkout@master
     
-    - name: Branch name
-      run: echo running on branch ${GITHUB_REF##*/}
+    - name: Print Pull Request Branch name extracted from GitHub context
+      env:
+        BRNAME: ${{ github.head_ref }}
+      run: echo "Branch name = $BRNAME"
     
     - uses: actions/setup-python@v1
       with:
