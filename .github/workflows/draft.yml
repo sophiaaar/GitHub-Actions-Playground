@@ -1,9 +1,5 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Draft reminder
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   pull_request:
     types: [opened]
@@ -11,6 +7,7 @@ on:
 jobs:
   draft_reminder:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false || github.event.pull_request.ready_for_review == false
     steps:
     - uses: thollander/actions-comment-pull-request@1.0.0
       with:
@@ -19,4 +16,5 @@ jobs:
               It appears that you made a non-draft PR!
               Please convert your PR to draft (button on the right side of the page)
               and cancel any jobs that started on Yamato.
+              See the PR template for more information.
               Thank you!
