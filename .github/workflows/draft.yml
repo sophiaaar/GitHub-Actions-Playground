@@ -12,7 +12,7 @@ jobs:
   draft_reminder:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: thollander/actions-comment-pull-request@1.0.0
       with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        comment: 'It appears that you made a non-draft PR! \n Please convert your PR to draft (button on the right side of the page) \n and cancel any jobs that started on Yamato. \n Thank you!'
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        message: 'It appears that you made a non-draft PR! \n Please convert your PR to draft (button on the right side of the page) \n and cancel any jobs that started on Yamato. \n Thank you!'
