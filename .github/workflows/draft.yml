@@ -15,4 +15,4 @@ jobs:
     - uses: actions/checkout@v2
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        pr-message: 'It appears that you made a non-draft PR! \n Please convert your PR to draft (button on the right side of the page) \n and cancel any jobs that started on Yamato. \n Thank you!'
+        comment: 'It appears that you made a non-draft PR! \n Please convert your PR to draft (button on the right side of the page) \n and cancel any jobs that started on Yamato. \n Thank you!'
